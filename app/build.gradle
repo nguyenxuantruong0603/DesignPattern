@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
 }
-
+apply plugin: "realm-android"
 android {
     namespace 'com.example.hocdesignpattern'
     compileSdk 33
@@ -27,8 +27,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+realm {
+    syncEnabled = true
+}
 dependencies {
+    implementation "io.realm:realm-gradle-plugin:10.11.1"
     implementation 'com.google.android.flexbox:flexbox:3.0.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
